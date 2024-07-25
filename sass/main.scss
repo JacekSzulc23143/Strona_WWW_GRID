@@ -1,6 +1,14 @@
 @use "utilities" as u;
 
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
 body {
-	font-family: "Cinzel", serif;
+	// font-family: "Cinzel", serif;
 	font-family: "Raleway", sans-serif;
+	font-size: 1.6rem;
+	color: u.$white;
+	background-color: u.$dark;
 }
