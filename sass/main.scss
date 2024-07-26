@@ -104,3 +104,60 @@ h1.company-name {
 		z-index: 500;
 	}
 }
+
+.nav {
+	&-mobile {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		background-color: u.$white;
+		transform: translateX(-102%);
+		transition: transform 0.3s;
+		z-index: 10;
+
+		&--active {
+			transform: translateX(0);
+		}
+	}
+
+	&-desktop {
+		display: none;
+	}
+
+	&__link {
+		position: relative;
+		display: inline-block;
+		margin: 0.5em;
+		padding: 0.5em;
+		font-size: 2.3rem;
+		color: u.$darker;
+		text-transform: uppercase;
+		text-decoration: none;
+		transition: color 0.3s;
+
+		&:hover {
+			color: u.$gold;
+		}
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			content: "";
+			width: 100%;
+			height: 100%;
+			border: 1px solid u.$gold;
+			opacity: 0; // nieprzezroczystość - ukrywamy border
+
+			&:hover::before {
+				animation: pulse 1s;
+			}
+		}
+	}
+}
