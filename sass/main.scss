@@ -6,9 +6,101 @@ html {
 }
 
 body {
-	// font-family: "Cinzel", serif;
 	font-family: "Raleway", sans-serif;
 	font-size: 1.6rem;
 	color: u.$white;
 	background-color: u.$dark;
+}
+
+h1.company-name {
+	font-family: "Cinzel", serif;
+	margin-bottom: 0.5em;
+	font-size: 3rem;
+	color: u.$gold;
+}
+
+// wrapper jest dla szerokich ekranów np. UHD, dla wyśrodkowania zawartości strony
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+}
+
+// header
+.header {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	height: 100vh;
+	position: relative;
+	overflow: hidden; // nav mobilna będzie wyjeżdżała z lewej strony (ukryta po lewej)
+
+	&__text {
+		display: grid;
+		justify-content: center;
+		align-content: center;
+		grid-row: 2/3; // tekst w drugim wierszu
+		grid-column: 1/3; // tekst na całej szerokośći w drugim wierszu
+		padding: 2em;
+
+		p {
+			font-weight: 200;
+		}
+	}
+
+	&__img {
+		grid-row: 1/2; // zdjęcie w pierwszym wierszu
+		grid-column: 1/3; // zdjęcie na całej szerokośći w pierwszym wierszu
+		position: relative;
+		width: 100%;
+		height: 100%;
+		background-image: url("../img/header-mini.jpg");
+		background-size: cover; // Zmienia rozmiar obrazu tła, aby zakryć cały kontener, nawet jeśli ma rozciągnąć obraz bądź uciąć jedną z krawędzi.
+		background-position: center; // Właściwość background-position ustawia początkową pozycję obrazu tła względem krawędzi obszaru pozycjonowania.
+		filter: sepia();
+	}
+
+	&__shadow {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.3);
+	}
+
+	&__arrow {
+		display: none;
+	}
+
+	&__bg-icon-one,
+	&__bg-icon-two {
+		position: absolute;
+		opacity: 0.05; // nieprzezroczystość
+		z-index: -5; // żeby ikony były pod tekstem
+	}
+
+	&__bg-icon-one {
+		bottom: 2em;
+		right: -3em;
+		width: 50%;
+		animation: rotate-right 55s infinite linear;
+	}
+
+	&__bg-icon-two {
+		display: none;
+	}
+}
+
+.hamburger {
+	position: absolute;
+	top: 3em;
+	left: 1em;
+	transform: translateY(-50%);
+	z-index: 500;
+
+	&-inner,
+	&-inner::before,
+	&-inner::after {
+		background-color: u.$white;
+		z-index: 500;
+	}
 }
