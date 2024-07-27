@@ -68,7 +68,7 @@ h1.company-name {
 	}
 
 	&__arrow {
-		display: none;
+		display: none; // ukrycie strzałki
 	}
 
 	&__bg-icon-one,
@@ -86,7 +86,7 @@ h1.company-name {
 	}
 
 	&__bg-icon-two {
-		display: none;
+		display: none; // ukrycie ikony
 	}
 }
 
@@ -127,7 +127,7 @@ h1.company-name {
 	}
 
 	&-desktop {
-		display: none;
+		display: none; // ukrycie nawigacji
 	}
 
 	&__link {
@@ -161,3 +161,5 @@ h1.company-name {
 		}
 	}
 }
+
+@include u.large;
