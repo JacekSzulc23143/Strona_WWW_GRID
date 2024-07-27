@@ -55,9 +55,9 @@
 			&__bg-icon-two {
 				display: block; // przywrócenie widoczności ikony
 				top: 10em;
-				bottom: 35%;
+				left: 35%;
 				width: 5%;
-				animation: rotate-left 55s infinite linear;
+				animation: rotate-left 55s infinite linear; // infinite - zapętlanie w nieskończoność
 			}
 		}
 
@@ -68,11 +68,26 @@
 
 			&-desktop {
 				display: block; // przywrócenie widoczności nawigacji
-				border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+				border-bottom: 1px solid rgba(255, 255, 255, 0.2); // linia
 			}
 
 			&__link {
 				color: c.$white;
+
+				&::before {
+					position: absolute;
+					top: 0;
+					left: 0;
+					content: "";
+					width: 100%;
+					height: 100%;
+					border: 1px solid c.$gold; // ramka która się powiększa
+					opacity: 0; // nieprzezroczystość - ukrywamy border
+				}
+
+				&:hover::before {
+					animation: pulse 1s;
+				}
 			}
 		}
 
