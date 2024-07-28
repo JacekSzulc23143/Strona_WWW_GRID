@@ -4,7 +4,7 @@ const footerYear = document.querySelector(".footer__year");
 
 // menu hamburgerowe
 const handleNav = () => {
-	navBtn.classList.toggle("is--active");
+	navBtn.classList.toggle("is-active");
 
 	navMobile.classList.toggle("nav-mobile--active");
 };
