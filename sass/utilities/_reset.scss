@@ -340,3 +340,42 @@ h1.company-name {
 		color: c.$gold;
 	}
 }
+
+// newsletter
+.newsletter {
+	padding: 8em 2em;
+	background-color: c.$red;
+	text-align: center;
+
+	&__text {
+		padding: 1em;
+		margin-bottom: 1em;
+		font-size: 4rem;
+		font-weight: 200;
+	}
+
+	&__form {
+		input {
+			margin-bottom: 1em;
+			padding: 1em;
+			width: 100%;
+			background-color: c.$white;
+			border: 1px solid transparent;
+		}
+
+		button {
+			padding: 1em;
+			border: 1px solid c.$gold;
+			background: none;
+			color: c.$gold;
+			font-weight: bold;
+			cursor: pointer;
+			transition: background-color 0.3s, color 0.3s;
+
+			&:hover {
+				background-color: c.$gold;
+				color: c.$red;
+			}
+		}
+	}
+}
