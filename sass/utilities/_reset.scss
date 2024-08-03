@@ -379,3 +379,27 @@ h1.company-name {
 		}
 	}
 }
+
+// gallery
+.gallery {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+
+	img {
+		height: 300px;
+		width: 100%;
+		object-fit: cover;
+
+		// odd - nieparzyste zdjęcia
+		&:nth-child(odd) {
+			display: none;
+		}
+	}
+}
+
+// footer
+.footer {
+	padding: 3em 1em;
+	border-top: 1px solid c.$darker;
+	text-align: center;
+}
